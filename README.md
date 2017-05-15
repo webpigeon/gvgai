@@ -1,43 +1,37 @@
-gvgai
-=====
+GVGAI - Android Version
+=======================
 
-This is the framework for the General Video Game Competition 2014 - http://www.gvgai.net/
+This repository is a version of the [GVG-AI][gvgai-repo] framework ported to maven and
+with dependencies on AWT removed from the code.
 
-Google group - https://groups.google.com/forum/#!forum/the-general-video-game-competition
-
-## FAQs / Troubleshooting
-
-1. Where are the Test methods? Due to the explosion of GVGAI competition tracks, we have distributed the main methods in different classes across the code hierarchy:
-
- - Single Player Planning track: tracks.singlePlayer.Test.java
- - 2-Player Planning track: tracks.multiPlayer.TestMultiPlayer.java
- - Level Generation track: tracks.levelGeneration.TestLevelGeneration.java
- - Rule Generation track: tracks.ruleGeneration.TestRuleGeneration.java
+## Where is the upstream for this project?
+* The upstream for this project is located [here][gvgai-repo].
+* Work on the maven version is being carried out on FOSS Galaxy's [gitlab server][fossgalaxy-vgdl].
 
 
-2. How do I upload my controller? What files or folder structure do I need? 
-First of all, your controller ```Agent.java``` and any auxiliary files you create should be in a single package folder with your username. For example, if your username is "abc", you should have a package folder named "abc" in the project. Your entire project layout should look something like this:
+## Build instructions
+### Build dependencies
+In order to build a project using Maven, ensure you have both Maven and Java 1.8.
 
-```groovy
-- abc
-	|- Agent.java
-	|- MyAdditionalFile1.java
-	|- MyAdditionalFile2.java
-- tracks
-- core
-- ontology
-- tools
+```bash
+# Debian based (including ubuntu)
+sudo apt install openjdk-8-jdk maven
+
+# Fedora (untested)
+sudo dnf install java-1.8.0-openjdk maven
+
+# OS X (untested)
+brew install maven
 ```
 
-Then, all you need to do is to zip and upload the "abc" folder. No other folders/files are necessary.
+### Building the project
+In order to build the project, you can use Maven:
 
+```bash
+mvn clean package
+```
 
-3. I am getting the error `javac1.8 class not found` when running Eclipse and ANT on build.xml**
-This is likely because the ANT version that is installed with your version of Eclipse is old. You can easily fix this problem by doing the following:
+This will generate the JAR in target/
 
-- Download the archive of the [latest version of ANT](http://ant.apache.org/bindownload.cgi) (Tested with  Ant 1.9.4)
-- Extract the archive onto a local folder on your computer (e.g., /Users/gvgai/ant/apache-ant-1.9.4/)
-- In Eclipse, go to Eclipse -> Preferences -> Ant -> Runtime
-- Click on "Ant Home'' button on the right.
-- Select the folder, which you extracted ANT into (e.g., /Users/gvgai/ant/apache-ant-1.9.4/)
-
+[gvgai-repo]: https://github.com/EssexUniversityMCTS/gvgai
+[fossgalaxy-vgdl]: https://git.fossgalaxy.com/iggi/vgdl

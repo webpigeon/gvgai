@@ -24,8 +24,8 @@ public class Test {
 		String sampleOLETSController = "tracks.singlePlayer.advanced.olets.Agent";
 
 		// Available games:
-		String gridGamesPath = "examples/gridphysics/";
-        String contGamesPath = "examples/contphysics/";
+		String gridGamesPath = "target/classes/games/gridphysics/";
+        String contGamesPath = "target/classes/games/contphysics/";
         String gamesPath;
 		String games[];
         boolean GRID_PHYSICS = true;
