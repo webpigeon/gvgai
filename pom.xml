@@ -10,8 +10,9 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
+		<!-- repo data for gitlab project -->
+		<fossgalaxy.owner.id>iggi</fossgalaxy.owner.id>
+		<fossgalaxy.repo.id>vgdl-tidy</fossgalaxy.repo.id>
 	</properties>
 
 	<parent>
